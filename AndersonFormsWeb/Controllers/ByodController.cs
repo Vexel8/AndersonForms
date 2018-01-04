@@ -132,10 +132,12 @@ namespace AndersonFormsWeb.Controllers
         [HttpPost]
         public ActionResult Update(Byod byod)
         {
+
             try
             {
                 byod = _iFByod.Update(byod);
-                return RedirectToAction("Index", "Byod");
+
+                return RedirectToAction("Index");
             }
             catch
             {
@@ -153,7 +155,7 @@ namespace AndersonFormsWeb.Controllers
             }
             catch
             {
-                return Json(false);
+                return Json(true);
             }
         }
         #endregion
