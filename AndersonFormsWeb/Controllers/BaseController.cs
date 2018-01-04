@@ -5,6 +5,7 @@ using System.Web.Mvc;
 
 namespace AndersonFormsWeb.Controllers
 {
+    //[CustomAuthorize(AllowedRoles = new string[] { "AndersonForms" })]
     public class BaseController : Controller
     {
         private IFUser _iFUser;
@@ -44,7 +45,7 @@ namespace AndersonFormsWeb.Controllers
         {
             get
             {
-                var user = _iFUser.ReadUser(Username);
+                var user = _iFUser.Read(Username);
                 return user;
             }
         }

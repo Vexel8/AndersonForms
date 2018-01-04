@@ -1,34 +1,35 @@
-﻿@{
-    ViewBag.Title = "BYOD | Anderson Group PH";
+
+@{
+    ViewBag.Title = "Index";
 }
-
-    <div ng-controller="ByodController as model" ng-init="model.Initialise()">
-        <div class="row">
-            <div class="col-sm-4">
-                <select ng-model="model.ListType" class="form-control" ng-change="model.Read()" ng-options="listType.Description for listType in model.ListTypes">
-                </select>
-            </div>
+<br> <br> <br> <br> <br> <br> <br> <br>
+<div ng-controller="ByodController as model" ng-init="model.Initialise()">
+    <div class="row">
+        <div class="col-sm-4">
+            <select ng-model="model.ListType" class="form-control" ng-change="model.Read()" ng-options="listType.Description for listType in model.ListTypes"></select>
         </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <a href="~/Byod/Create" class="btn btn-info"><i class="glyphicon glyphicon-plus-sign"></i> New Request</a>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <a href="~/Byod/Create" class="btn btn-info"><i class="glyphicon glyphicon-plus-sign"></i> New Request</a>
         </div>
-        <table class="table table-striped table-hover">
-            <thead style="background-color:transparent;">
-                <tr id="info">
+    </div>
+    <table class="table table-striped table-hover">
+        <thead style="background-color:transparent;">
+            <tr id="info">
 
-                    <th>Type of Device ID</th>
-                    <th>Brand Name</th>
-                    <th>Contact Number</th>
-                    <th>Email</th>
-                    <th>Serial Number</th>
-                    <th>Approved</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="byod in model.Byods">
+                <th>Type of Device ID</th>
+                <th>Brand Name</th>
+                <th>Contact Number</th>
+                <th>Email</th>
+                <th>Serial Number</th>
+                <th>Approved</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="byod in model.Byods">
+
 
                     <td>
                         <span ng-bind="byod.TypeOfDeviceId"></span>
@@ -54,9 +55,8 @@
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a ng-href="#" ng-click="model.Approve(byod.ByodId)" class="success"> Approve</a></li>
-                                <li><a ng-href="{{'/Byod/Update/' + byod.ByodId}}" class="info"><i class="glyphicon glyphicon-edit"></i>Update</a></li>
-                                <li><a ng-href="#" ng-click="model.Delete(byod.ByodId)" class="danger"> <i class="glyphicon glyphicon-trash"></i> Delete</a></li>
+                                <li><a ng-href="#" ng-click="model.Approve(byod.ByodId)" class="success">Approve</a></li>
+
                             </ul>
                         </div>
                     </td>
@@ -64,3 +64,7 @@
             </tbody>
         </table>
     </div>
+
+
+
+
