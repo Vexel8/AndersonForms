@@ -1,4 +1,3 @@
-
 @{
     ViewBag.Title = "Index";
 }
@@ -28,44 +27,40 @@
             </tr>
         </thead>
         <tbody>
-
             <tr ng-repeat="byod in model.Byods">
 
+                <td>
+                    <span ng-bind="byod.TypeOfDeviceId"></span>
+                </td>
+                <td>
+                    <span ng-bind="byod.BrandName"></span>
+                </td>
+                <td>
+                    <span ng-bind="byod.ContactNo"></span>
+                </td>
+                <td>
+                    <span ng-bind="byod.Email"></span>
+                </td>
+                <td>
+                    <span ng-bind="byod.SerialNumber"></span>
+                </td>
+                <td>
+                    <span ng-bind="byod.Approved"></span>
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a ng-href="#" ng-click="model.Approve(byod.ByodId)" class="success"> Approve</a></li>
 
-                    <td>
-                        <span ng-bind="byod.TypeOfDeviceId"></span>
-                    </td>
-                    <td>
-                        <span ng-bind="byod.BrandName"></span>
-                    </td>
-                    <td>
-                        <span ng-bind="byod.ContactNo"></span>
-                    </td>
-                    <td>
-                        <span ng-bind="byod.Email"></span>
-                    </td>
-                    <td>
-                        <span ng-bind="byod.SerialNumber"></span>
-                    </td>
-                    <td>
-                        <span ng-bind="byod.Approved"></span>
-                    </td>
-                    <td>
-                        <div class="dropdown">
-                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a ng-href="#" ng-click="model.Approve(byod.ByodId)" class="success">Approve</a></li>
-
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-
-
-
+                            @*<li><a ng-href="{{'/Byod/Update/' + byod.ByodId}}" class="info"><i class="glyphicon glyphicon-edit"></i>Update</a></li>
+                                <li><a ng-href="#" ng-click="model.Delete(byod.ByodId)" class="danger"> <i class="glyphicon glyphicon-trash"></i> Delete</a></li>*@
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
